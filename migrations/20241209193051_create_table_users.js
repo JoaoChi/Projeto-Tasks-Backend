@@ -1,7 +1,7 @@
 const { table } = require("../config/db");
 
 exports.up = function(knex) {
-  return knex.schema.createTable('Users', table => {
+  return knex.schema.createTable('users', table => {
     table.increments('id').primary()
     table.string('name').notNull()
     table.string('email').notNull().unique()
@@ -11,5 +11,5 @@ exports.up = function(knex) {
 
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('Users')
+  return knex.schema.dropTable('users')
 };
