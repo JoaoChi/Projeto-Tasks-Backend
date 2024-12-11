@@ -5,8 +5,8 @@ exports.up = function(knex) {
     table.increments('id').primary()
     table.string('desc').notNull()
     table.dateTime('estimateAt')
-    table.dateTime('doneAt')
-    table.integet('userId').references('id')
+    table.dateTime('doneAt') 
+    table.integer('userId').references('id')
         .inTable('Users').notNull
   })
 };
