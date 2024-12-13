@@ -5,7 +5,7 @@ const { Strategy, ExtractJwt } = passportJwt
 
 module.exports = app => {
     const params = {
-        secretOrKew: authSecret,
+        secretOrKey: authSecret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     }
 
@@ -26,7 +26,7 @@ module.exports = app => {
     passport.use(strategy)
 
     return {
-        initializa: () => passport.initialize,
-        authenticate: () => passport.authenticate('jwt', { session: fasle })
+        initializa: () => passport.initialize(),
+        authenticate: () => passport.authenticate('jwt', { session: false })
     }
 }
